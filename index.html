@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mofertomat</title>
+</head>
+<body>
+    <div class="mofertomat-wrapper">
+<header>
+    <h1>Ofertomat v 7.0.0</h1>
+    <h2>Nowa wersja ofertomatu, w której samodzielnie wpisujemy ceny</h2>
+</header>
+<section class="prices">
+    <button class="prices__add-btn" type='button'>Dodaj ceny</button>
+    <div class="prices__choose-gt">
+        <h2>Wybierz grupę taryfową, dla której chcesz wprowadzić ceny</h2>
+        <div>
+            <div class="prices__gt-btn">C11</div>
+            <div class="prices__gt-btn">C12a</div>
+            <div class="prices__gt-btn">C12b</div>
+            <div class="prices__gt-btn">C21</div>
+            <div class="prices__gt-btn">C22a</div>
+            <div class="prices__gt-btn">C22b</div>
+            <div class="prices__gt-btn">C23</div>
+            <div class="prices__gt-btn">B11</div>
+            <div class="prices__gt-btn">B21</div>
+            <div class="prices__gt-btn">B23</div>
+            <div class="prices__gt-btn">G11</div>
+            <div class="prices__gt-btn">G12</div>
+            <div class="prices__gt-btn">G12w</div>
+        </div>
+    </div>
+    <div class="prices__insert">
+        <!-- dynamicznie uzupełniane przez js -->
+    </div>
+</section>
+<section class="date">
+    <h3 class="date__heading">Stara umowa do:</h3>
+    <div>
+        <select name="dateToMonth" id="dateToMonth">
+            <option value="11">Styczeń</option>
+            <option value="10">Luty</option>
+            <option value="9">Marzec</option>
+            <option value="8">Kwiecień</option>
+            <option value="7">Maj</option>
+            <option value="6">Czerwiec</option>
+            <option value="5">Lipiec</option>
+            <option value="4">Sieprień</option>
+            <option value="3">Wrzesień</option>
+            <option value="2">Październik</option>
+            <option value="1">Listopad</option>
+            <option value="0">Grudzień</option>
+        </select>
+        <select name="dateToYear" id="dateToYear">
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        </select>
+    </div>
+    <div>
+        <h3 class="date__heading">Nowa umowa do [zakładamy do końca roku]</h3>
+    <div>
+        <select name="dateNewYear" id="dateNewYear">            
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+        </select>
+    </div>
+</section>
+<section class="proposition">
+    <div class='proposition__div'>
+        <span class="proposition__span">Zużycie klienta w MWh / rok</span>
+         <div><label for="">I strefa</label><input type="text" id="wearFirst" value='0'></div>
+         <div><label for="">II strefa</label><input type="text" id="wearSecond" value='0'></div>
+         <div><label for="">III strefa</label><input type="text" id="wearThird" value='0'></div>
+    </div>
+</section>
+    </div>
+</body>
+</html>
