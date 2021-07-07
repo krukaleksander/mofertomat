@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mofertomat</title>
+    <link rel="stylesheet" href="mofertomat.css">
 </head>
 <body>
+    <script defer src="mofertomat.js"></script>
     <div class="mofertomat-wrapper">
 <header>
     <h1>Ofertomat v 7.0.0</h1>
     <h2>Nowa wersja ofertomatu, w której samodzielnie wpisujemy ceny</h2>
 </header>
 <section class="prices">
-    <button class="prices__add-btn" type='button'>Dodaj ceny</button>
+    <button class="prices__add-btn" type='button'>Wprowadź ceny</button>
     <div class="prices__choose-gt">
+        <div class="close-window" id='closeSetPrices'>Zamknij</div>
         <h2>Wybierz grupę taryfową, dla której chcesz wprowadzić ceny</h2>
         <div>
             <div class="prices__gt-btn">C11</div>
@@ -95,6 +98,7 @@
     </div>
     <button id="calculateProposition" class='proposition__btn' type='button'>Oblicz!</button>
 </section>
+<section class="proposition__note"></section>
     </div>
 </body>
 </html>
