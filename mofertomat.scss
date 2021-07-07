@@ -63,6 +63,24 @@ $mofertomatBackground: #1e1a1a;
                 padding-bottom: 5px;
                 border-bottom: 1px solid;
             }
+            .gt-organizer {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-evenly;
+                justify-content: space-around;
+                height: 80%;
+            }
+            
+        }
+        &__gt-btn {
+            padding: 5px;
+            width: 70px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid yellowgreen;
+            line-height: 18px;
+            font-weight: bolder;
+            cursor: pointer;
         }
     }
 }

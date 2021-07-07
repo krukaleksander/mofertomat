@@ -77,6 +77,30 @@
   border-bottom: 1px solid;
 }
 
+.mofertomat-wrapper .prices__choose-gt .gt-organizer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80%;
+}
+
+.mofertomat-wrapper .prices__gt-btn {
+  padding: 5px;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid yellowgreen;
+  line-height: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
 .close-window {
   width: 100px;
   text-align: center;
