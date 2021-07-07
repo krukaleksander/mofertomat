@@ -74,12 +74,26 @@
     </div>
 </section>
 <section class="proposition">
-    <div class='proposition__div'>
+    <div class='proposition__wear'>
         <span class="proposition__span">Zużycie klienta w MWh / rok</span>
          <div><label for="">I strefa</label><input type="text" id="wearFirst" value='0'></div>
          <div><label for="">II strefa</label><input type="text" id="wearSecond" value='0'></div>
          <div><label for="">III strefa</label><input type="text" id="wearThird" value='0'></div>
     </div>
+    <div class="proposition__has-prices">
+        <span class="proposition__span">Obecne stawki klienta</span>
+        <span class="proposition__span proposition__span--sub-text">Wypełnij tylko jeśli chcesz wyliczyć oszczędności</span>
+        <div><label for="">I strefa</label><input type="text" value='0' id='hasPriceFirst'></div>
+        <div><label for="">II strefa</label><input type="text" value='0' id='hasPriceSecond'></div>
+        <div><label for="">III strefa</label><input type="text" value='0' id='hasPriceThird'></div>
+    </div>
+    <div class="proposition__given">
+        <span class="proposition__span">Stawki, które proponujesz</span>
+        <div><label for="">I strefa</label><input type="text" value='0' id='propositionFirst'></div>
+        <div><label for="">II strefa</label><input type="text" value='0' id='propositionSecond'></div>
+        <div><label for="">III strefa</label><input type="text" value='0' id='propositionThird'></div>
+    </div>
+    <button id="calculateProposition" class='proposition__btn' type='button'>Oblicz!</button>
 </section>
     </div>
 </body>
