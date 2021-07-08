@@ -19,8 +19,9 @@
 }
 
 .mofertomat-wrapper header h1 {
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .mofertomat-wrapper header h2 {
@@ -56,9 +57,7 @@
   top: 0px;
   left: 0px;
   padding: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -102,6 +101,7 @@
 }
 
 .mofertomat-wrapper .prices__insert {
+  display: block;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -122,6 +122,19 @@
   font-size: 18px;
   line-height: 130%;
   margin-bottom: 20px;
+}
+
+.mofertomat-wrapper .prices__insert select {
+  background-color: transparent;
+  color: yellowgreen;
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.mofertomat-wrapper .prices__insert select option {
+  background-color: #1e1a1a;
 }
 
 .mofertomat-wrapper .prices__insert label {
