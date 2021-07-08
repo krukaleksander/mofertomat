@@ -82,6 +82,37 @@ $mofertomatBackground: #1e1a1a;
             font-weight: bolder;
             cursor: pointer;
         }
+        &__insert {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            background-color: $mofertomatBackground;
+            padding: 10px;
+            text-align: center;
+            min-height: 100vh;
+            h2 {
+                color: yellowgreen;
+                font-size: 25px;
+            }
+            p {
+                padding: 5px;
+                font-size: 18px;
+                line-height: 130%;
+                margin-bottom: 20px;
+            }
+            label {
+                font-size: 20px;
+            }
+            input {
+                font-size: 20px;
+                width: 100px;
+                margin-left: 10px;
+            }
+            button {
+                margin-top: 30px;
+            }
+        }
     }
 }
 

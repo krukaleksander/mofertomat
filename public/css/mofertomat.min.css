@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mofertomat-wrapper {
+  padding: 10px;
+  color: #ddd;
+  background-color: #1e1a1a;
+}
+
+.mofertomat-wrapper header {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.mofertomat-wrapper header h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.mofertomat-wrapper header h2 {
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid aqua;
+  border-radius: 5px;
+}
+
+.mofertomat-wrapper .prices {
+  padding: 5px;
+}
+
+.mofertomat-wrapper .prices button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid aliceblue;
+  color: #ddd;
+  font-size: 15px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.mofertomat-wrapper .prices__choose-gt {
+  position: fixed;
+  background-color: #1e1a1a;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mofertomat-wrapper .prices__choose-gt .close-window {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.mofertomat-wrapper .prices__choose-gt h2 {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
+}
+
+.mofertomat-wrapper .prices__choose-gt .gt-organizer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80%;
+}
+
+.mofertomat-wrapper .prices__gt-btn {
+  padding: 5px;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid yellowgreen;
+  line-height: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.mofertomat-wrapper .prices__insert {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #1e1a1a;
+  padding: 10px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.mofertomat-wrapper .prices__insert h2 {
+  color: yellowgreen;
+  font-size: 25px;
+}
+
+.mofertomat-wrapper .prices__insert p {
+  padding: 5px;
+  font-size: 18px;
+  line-height: 130%;
+  margin-bottom: 20px;
+}
+
+.mofertomat-wrapper .prices__insert label {
+  font-size: 20px;
+}
+
+.mofertomat-wrapper .prices__insert input {
+  font-size: 20px;
+  width: 100px;
+  margin-left: 10px;
+}
+
+.mofertomat-wrapper .prices__insert button {
+  margin-top: 30px;
+}
+
+.close-window {
+  width: 100px;
+  text-align: center;
+  border: 1px solid;
+  padding: 2px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=mofertomat.min.css.map */

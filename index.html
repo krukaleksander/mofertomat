@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mofertomat</title>
-    <link rel="stylesheet" href="mofertomat.css">
+    <link rel="stylesheet" href="public/css/mofertomat.min.css">
 </head>
 <body>
     <script defer src="mofertomat.js"></script>
@@ -36,7 +36,13 @@
         </div>
     </div>
     <div class="prices__insert">
-        <!-- dynamicznie uzupełniane przez js -->
+        <div class="close-window" id='closeSetPrice'>Zamknij</div>
+        <h2>C11</h2>
+        <p>Ceny pozostaną zapisane w pamięci przeklądarki, z której korzystasz. Jeśli jednak nawet na tym samym urządzeniu włączysz ofertomat przez inny program, ceny nie będą widoczne.</p>
+        <div><label for="">I strefa</label><input type="text" id="basePriceFirst" value='0'></div>
+         <div><label for="">II strefa</label><input type="text" id="basePriceSecond" value='0'></div>
+         <div><label for="">III strefa</label><input type="text" id="basePriceThird" value='0'></div>
+         <button class='prices__change-base-price-btn' id='changeBasePrice'>Modyfikuj</button>
     </div>
 </section>
 <section class="date">
