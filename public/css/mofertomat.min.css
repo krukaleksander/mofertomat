@@ -160,6 +160,39 @@
   cursor: pointer;
 }
 
+.gt {
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gt p {
+  font-weight: bolder;
+  font-size: 18px;
+  color: yellowgreen;
+  margin-bottom: 10px;
+}
+
+.gt select {
+  background-color: #1e1a1a;
+  color: yellowgreen;
+  font-size: 20px;
+}
+
+.gt select option {
+  background-color: #1e1a1a;
+  color: yellowgreen;
+  font-size: 20px;
+}
+
 .date {
   padding: 5px;
 }
@@ -167,6 +200,7 @@
 .date h3 {
   text-align: center;
   color: yellowgreen;
+  margin-bottom: 10px;
 }
 
 .date span {
@@ -174,6 +208,7 @@
   text-align: center;
   font-weight: bolder;
   letter-spacing: 1px;
+  color: #a5bb775c;
 }
 
 .date div {

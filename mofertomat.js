@@ -6,6 +6,11 @@ const closeSetPrice = document.getElementById('closeSetPrice');
 const setPriceComponent = document.querySelector('.prices__insert');
 const openChooseGtComponent = document.querySelector('.prices__add-btn');
 const allGtBtns = [...document.querySelectorAll('.prices__gt-btn')];
+const calculateBtn = document.getElementById('calculateBtn');
+
+
+// koniec zmienne
+
 
 closeChooseGtComponent.addEventListener('click', () => chooseGtComponent.style.display = 'none');
 
@@ -18,4 +23,15 @@ allGtBtns.forEach(btn => {
         setPriceComponent.style.display = 'block';
         setPriceComponent.children[1].innerText = e.target.innerText;
     })
+})
+
+// pobieranie bazy zapisanych cen
+
+const localPriceDb = window.localStorage.getItem('ofertomatPrices');
+
+// koniec pobieranie bazy zapisanych cen
+
+
+calculateBtn.addEventListener('click', () => {
+    if(localPriceDb === null) return alert('Nie wprowadzono jeszcze żadnyh cen!')
 })
