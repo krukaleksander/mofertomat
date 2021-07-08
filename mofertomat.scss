@@ -84,7 +84,7 @@ $mofertomatBackground: #1e1a1a;
             cursor: pointer;
         }
         &__insert {
-            display: block;
+            display: none;
             position: fixed;
             top: 0px;
             left: 0px;
@@ -136,4 +136,179 @@ $mofertomatBackground: #1e1a1a;
     padding: 2px;
     margin-bottom: 5px;
     cursor: pointer;
+}
+
+.date {
+    padding: 5px;
+    h3 {
+        text-align: center;
+        color: yellowgreen;
+    }
+    span {
+        display: block;
+        text-align: center;
+        font-weight: bolder;
+        letter-spacing: 1px;
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        select {
+            background-color: $mofertomatBackground;
+            color: yellowgreen;
+            font-size: 20px;
+            font-weight: bolder;
+            width: 100px;
+            text-align: center;
+            option {
+                background-color: $mofertomatBackground;
+                color: yellowgreen;
+            }
+        }
+    }
+    div:nth-child(3) {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+}
+.proposition {
+    padding: 5px;
+    div {
+        margin-bottom: 10px;
+        
+        span {
+            display: block;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 15px;
+            color: yellowgreen;
+        }
+        label {
+            font-weight: bolder;
+            letter-spacing: 1px;
+            margin-right: 5px;
+            align-self: center;
+        }
+        input {
+            font-size: 20px;
+            width: 100px;
+            height: 30px;
+            color: $mofertomatColor;
+            background-color: $mofertomatBackground;
+            border: 1px solid $mofertomatColor;
+        }
+       
+    }
+    &__span--sub-text {
+            color: #a5bb775c!important;
+    }
+    div div {
+        display: flex;
+        justify-content: center;
+    }
+    .calculate-btn-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    button{
+        border: none;
+        background-color: unset;
+        position: relative;
+        display: inline-block;
+        padding: 25px 30px;
+        margin: 40px 0;
+        color: #fa6900;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+        letter-spacing: 4px;
+        overflow: hidden;
+        margin-right: 50px;
+        filter: hue-rotate(110deg);
+       
+    }
+    button:hover{
+        background: #fa6900;
+        color: #fff;
+        box-shadow: 0 0 5px #fa6900,
+                    0 0 25px #fa6900,
+                    0 0 50px #fa6900,
+                    0 0 200px #fa6900;
+         -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    }
+    button span{
+        position: absolute;
+        display: block;
+    }
+    button span:nth-child(1){
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg,transparent,#fa6900);
+        animation: animate1 1s linear infinite;
+    }
+    @keyframes animate1{
+        0%{
+            left: -100%;
+        }
+        50%,100%{
+            left: 100%;
+        }
+    }
+    button span:nth-child(2){
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg,transparent,#fa6900);
+        animation: animate2 1s linear infinite;
+        animation-delay: 0.25s;
+    }
+    @keyframes animate2{
+        0%{
+            top: -100%;
+        }
+        50%,100%{
+            top: 100%;
+        }
+    }
+    button span:nth-child(3){
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg,transparent,#fa6900);
+        animation: animate3 1s linear infinite;
+        animation-delay: 0.50s;
+    }
+    @keyframes animate3{
+        0%{
+            right: -100%;
+        }
+        50%,100%{
+            right: 100%;
+        }
+    }
+    
+    
+    button span:nth-child(4){
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg,transparent,#fa6900);
+        animation: animate4 1s linear infinite;
+        animation-delay: 0.75s;
+    }
+    @keyframes animate4{
+        0%{
+            bottom: -100%;
+        }
+        50%,100%{
+            bottom: 100%;
+        }
+    } 
+    
 }

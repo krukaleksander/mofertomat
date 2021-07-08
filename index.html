@@ -80,7 +80,8 @@
         </select>
     </div>
     <div>
-        <h3 class="date__heading">Nowa umowa do [zakładamy do końca roku]</h3>
+        <h3 class="date__heading">Nowa umowa do:</h3>
+        <span>[zakładamy do końca roku]</span>
     <div>
         <select name="dateNewYear" id="dateNewYear">            
             <option value="2022">2022</option>
@@ -111,7 +112,16 @@
         <div><label for="">II strefa</label><input type="text" value='0' id='propositionSecond'></div>
         <div><label for="">III strefa</label><input type="text" value='0' id='propositionThird'></div>
     </div>
-    <button id="calculateProposition" class='proposition__btn' type='button'>Oblicz!</button>
+    <div class='calculate-btn-wrapper'>
+        <button id='calculateBtn'>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Oblicz
+        </button>
+    </div>
+    
 </section>
 <section class="proposition__note"></section>
     </div>
