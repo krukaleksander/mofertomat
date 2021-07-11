@@ -22,6 +22,21 @@ allGtBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         setPriceComponent.style.display = 'block';
         setPriceComponent.children[1].innerText = e.target.innerText;
+        const secondNumberInGt = e.target.innerText[2];
+        switch (secondNumberInGt) {
+            case '1':
+                setPriceComponent.children[6].style.display = 'none';
+                setPriceComponent.children[7].style.display = 'none';
+                break;
+            case '2':
+                setPriceComponent.children[6].style.display = 'block';
+                setPriceComponent.children[7].style.display = 'none';
+                break;           
+            default:
+                setPriceComponent.children[6].style.display = 'block';
+                setPriceComponent.children[7].style.display = 'block';
+                break;
+        }
     })
 })
 
