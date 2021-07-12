@@ -191,6 +191,10 @@ function getActualValues() {
             sphereFirst: replaceAndParseMainFn(document.getElementById('propositionFirst').value),
             sphereSecond: replaceAndParseMainFn(document.getElementById('propositionSecond').value),
             sphereThird: replaceAndParseMainFn(document.getElementById('propositionThird').value),
+        },
+        oh: {
+            has: replaceAndParseMainFn(document.getElementById('hasOh').value),
+            weGive: replaceAndParseMainFn(document.getElementById('propositionOh').value)
         }
     }
 }
@@ -228,6 +232,21 @@ function checkIfSomePriceIsZero(yearsArr, pricesObj) {
     return result;
 }
 
+function calculateSavings(flag = true) {
+    const actualValues = getActualValues();
+    const {gt, wear, actualPrices, proposition} = actualValues;
+    switch (gt[2]) {
+        case '1':
+            //tutaj 
+            break;
+        case '2':
+
+            break;
+        default:
+            break;
+    }
+}
+
 calculateBtn.addEventListener('click', () => {
     const inputData = getActualValues();
     const {
@@ -235,7 +254,6 @@ calculateBtn.addEventListener('click', () => {
         endOfActualAgreement,
         endOfNewAgreement,
         wear,
-        actualPrices,
         proposition
     } = inputData;
     let marge2021 = 0;
@@ -252,8 +270,8 @@ calculateBtn.addEventListener('click', () => {
     if (!calculateFlag) return alert('W wybranym przez Ciebie okresie jest rok, dla którego nie masz podanej ceny!');
     switch (gt[2]) {
         case '1':
-            if(wear.sphereFirst === 0) return alert('Zużycie 0?');
-            if(proposition.sphereFirst === 0) return alert('Za darmo chcesz oddać ten prąd? Propozycja 0?');            
+            if (wear.sphereFirst === 0) return alert('Zużycie 0?');
+            if (proposition.sphereFirst === 0) return alert('Za darmo chcesz oddać ten prąd? Propozycja 0?');
             calculateYearsTable.forEach(obj => {
                 if (obj.hasOwnProperty('2021')) {
                     marge2021 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2021])) * wear.sphereFirst) * obj[2021];
@@ -303,7 +321,7 @@ calculateBtn.addEventListener('click', () => {
                 if (obj.hasOwnProperty('2021')) {
                     marge2021 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2021][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2021][1])) * wear.sphereSecond)) + (((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2021][2])) * wear.sphereThird)))) * obj[2021];
                 }
-                if (obj.hasOwnProperty('2022')) {  
+                if (obj.hasOwnProperty('2022')) {
                     marge2022 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2022][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2022][1])) * wear.sphereSecond)) + (((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2022][2])) * wear.sphereThird)))) * obj[2022];
                 }
                 if (obj.hasOwnProperty('2023')) {
@@ -321,7 +339,7 @@ calculateBtn.addEventListener('click', () => {
             })
             break;
     }
-    margeMass = (marge2021 + marge2022 + marge2023 + marge2024 + marge2025 + marge2026).toFixed(2);  
-    propositionNoteContainer.children[1].innerHTML = `Twoja masa marży to: <span>${margeMass}</span>`  
+    margeMass = (marge2021 + marge2022 + marge2023 + marge2024 + marge2025 + marge2026).toFixed(2);
+    propositionNoteContainer.children[1].innerHTML = `Twoja masa marży to: <span>${margeMass}</span>`
     propositionNoteContainer.style.display = 'flex';
 });
