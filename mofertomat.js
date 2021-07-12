@@ -41,33 +41,67 @@ function getLocalDb() {
 function changePrices() {
     const gt = setPriceComponent.children[1].innerText;
     const year = document.getElementById('chooseYear').value;
-    const priceFirst = document.getElementById('basePriceFirst').value;
+    const priceFirst = document.getElementById('basePriceFirst');
+    const priceSecond = document.getElementById('basePriceSecond');
+    const priceThird = document.getElementById('basePriceThird');
+    const actualInDb = localPriceDb.find(priceObject => priceObject.name === gt.toLowerCase());
     switch (gt[2]) {
-        case '1':
-           const actualInDb = localPriceDb.find(priceObject => priceObject.name === gt.toLowerCase());
+        case '1':           
            if(actualInDb) {
             const baseWithoutThisGt = localPriceDb.filter(obj => obj.name !== gt.toLowerCase());
             for (const yearInDb in actualInDb) {
-                if(yearInDb === year) actualInDb[yearInDb] = priceFirst;               
+                if(yearInDb === year) actualInDb[yearInDb] = priceFirst.value;               
               }
               const newDb = [...baseWithoutThisGt, ...[actualInDb]];
               updateLocalDb(newDb);
            } else {
              const newPriceObject = {name: gt.toLowerCase(), 2021: '0', 2022: '0', 2023: '0', 2024: '0', 2025: '0', 2026: '0'};
              for (const yearInDb in newPriceObject) {
-                if(yearInDb === year) newPriceObject[yearInDb] = priceFirst;               
+                if(yearInDb === year) newPriceObject[yearInDb] = priceFirst.value;               
               };
               const newDb = [...localPriceDb, ...[newPriceObject]];
               updateLocalDb(newDb);
            }
             break;
         case '2':
-            
+            if(actualInDb) {
+                const baseWithoutThisGt = localPriceDb.filter(obj => obj.name !== gt.toLowerCase());
+                for (const yearInDb in actualInDb) {
+                    if(yearInDb === year) actualInDb[yearInDb] = [priceFirst.value, priceSecond.value];               
+                  }
+                  const newDb = [...baseWithoutThisGt, ...[actualInDb]];
+                  updateLocalDb(newDb);
+               } else {
+                 const newPriceObject = {name: gt.toLowerCase(), 2021: ['0', '0'], 2022: ['0', '0'], 2023: ['0', '0'], 2024: ['0', '0'], 2025: ['0', '0'], 2026: ['0', '0']};
+                 for (const yearInDb in newPriceObject) {
+                    if(yearInDb === year) newPriceObject[yearInDb] = [priceFirst.value, priceSecond.value];               
+                  };
+                  const newDb = [...localPriceDb, ...[newPriceObject]];
+                  updateLocalDb(newDb);
+               }
             break;
         
         default:
+            if(actualInDb) {
+                const baseWithoutThisGt = localPriceDb.filter(obj => obj.name !== gt.toLowerCase());
+                for (const yearInDb in actualInDb) {
+                    if(yearInDb === year) actualInDb[yearInDb] = [priceFirst.value, priceSecond.value, priceThird.value];               
+                  }
+                  const newDb = [...baseWithoutThisGt, ...[actualInDb]];
+                  updateLocalDb(newDb);
+               } else {
+                 const newPriceObject = {name: gt.toLowerCase(), 2021: ['0', '0', '0'], 2022: ['0', '0', '0'], 2023: ['0', '0', '0'], 2024: ['0', '0', '0'], 2025: ['0', '0', '0'], 2026: ['0', '0', '0']};
+                 for (const yearInDb in newPriceObject) {
+                    if(yearInDb === year) newPriceObject[yearInDb] = [priceFirst.value, priceSecond.value, priceThird.value];               
+                  };
+                  const newDb = [...localPriceDb, ...[newPriceObject]];
+                  updateLocalDb(newDb);
+               }
             break;
     }
+         priceFirst.value = '0';
+         priceSecond.value = '0';
+         priceThird.value = '0';
 }
 
 allGtBtns.forEach(btn => {
