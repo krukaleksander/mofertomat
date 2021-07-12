@@ -210,14 +210,15 @@ function whichYearsCalculate(startMonth, startYear, endYear) {
 
     return resultTable
 }
+
 function checkIfSomePriceIsZero(yearsArr, pricesObj) {
     let result = true;
     for (const year in pricesObj) {
-        if (pricesObj[year] === '0' || pricesObj[year][0] === '0') {           
-            yearsArr.forEach(element => {               
-                if(element.hasOwnProperty([year])) result = false; 
+        if (pricesObj[year] === '0' || pricesObj[year][0] === '0') {
+            yearsArr.forEach(element => {
+                if (element.hasOwnProperty([year])) result = false;
             })
-          
+
         }
     }
     return result;
@@ -225,15 +226,36 @@ function checkIfSomePriceIsZero(yearsArr, pricesObj) {
 
 calculateBtn.addEventListener('click', () => {
     const inputData = getActualValues();
-    const {gt, endOfActualAgreement, endOfNewAgreement, wear, actualPrices, proposition} = inputData;
+    const {
+        gt,
+        endOfActualAgreement,
+        endOfNewAgreement,
+        wear,
+        actualPrices,
+        proposition
+    } = inputData;
+    let marge2021 = 0;
+    let marge2022 = 0;
+    let marge2023 = 0;
+    let marge2024 = 0;
+    let marge2025 = 0;
+    let marge2026 = 0;
+    let margeMass = 0;
     const calculateYearsTable = whichYearsCalculate(endOfActualAgreement.month, endOfActualAgreement.year, endOfNewAgreement);
     const pricesFromDb = localPriceDb.find(priceObject => priceObject.name === gt.toLowerCase());
     const calculateFlag = checkIfSomePriceIsZero(calculateYearsTable, pricesFromDb);
-    if(pricesFromDb === undefined) return alert('Nie masz wprowadzonych cen dla tej GT');    
-    if(!calculateFlag) return alert('W wybranym przez Ciebie okresie jest rok, dla którego nie masz podanej ceny!');  
+    if (pricesFromDb === undefined) return alert('Nie masz wprowadzonych cen dla tej GT');
+    if (!calculateFlag) return alert('W wybranym przez Ciebie okresie jest rok, dla którego nie masz podanej ceny!');
     switch (gt[2]) {
         case '1':
-
+            // if(wear.sphereFirst === 0) return alert('Zużycie 0?');
+            // if(proposition.sphereFirst === 0) return alert('Za darmo chcesz oddać ten prąd? Propozycja 0?');            
+            calculateYearsTable.forEach(obj => {
+                if (obj.hasOwnProperty('2021')) {  
+                    marge2021 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2021])) * wear.sphereFirst) * obj[2021];
+                }
+            })
+            console.log(marge2021)
             break;
         case '2':
 
