@@ -205,16 +205,33 @@ function whichYearsCalculate(startMonth, startYear, endYear) {
                 [nextYear]: 1
             })
         }
-        
+
     }
-    console.log(resultTable)
+
     return resultTable
+}
+function checkIfSomePriceIsZero(yearsArr, pricesObj) {
+    let result = true;
+    for (const year in pricesObj) {
+        if (pricesObj[year] === '0' || pricesObj[year][0] === '0') {           
+            yearsArr.forEach(element => {               
+                if(element.hasOwnProperty([year])) result = false; 
+            })
+          
+        }
+    }
+    return result;
 }
 
 calculateBtn.addEventListener('click', () => {
     const inputData = getActualValues();
-    const calculateYearsTable = whichYearsCalculate(inputData.endOfActualAgreement.month, inputData.endOfActualAgreement.year, inputData.endOfNewAgreement);
-    switch (inputData.gt[2]) {
+    const {gt, endOfActualAgreement, endOfNewAgreement, wear, actualPrices, proposition} = inputData;
+    const calculateYearsTable = whichYearsCalculate(endOfActualAgreement.month, endOfActualAgreement.year, endOfNewAgreement);
+    const pricesFromDb = localPriceDb.find(priceObject => priceObject.name === gt.toLowerCase());
+    const calculateFlag = checkIfSomePriceIsZero(calculateYearsTable, pricesFromDb);
+    if(pricesFromDb === undefined) return alert('Nie masz wprowadzonych cen dla tej GT');    
+    if(!calculateFlag) return alert('W wybranym przez Ciebie okresie jest rok, dla którego nie masz podanej ceny!');  
+    switch (gt[2]) {
         case '1':
 
             break;
