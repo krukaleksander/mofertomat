@@ -9,6 +9,8 @@ const allGtBtns = [...document.querySelectorAll('.prices__gt-btn')];
 const calculateBtn = document.getElementById('calculateBtn');
 const changePirecesBtn = document.getElementById('changeBasePrice');
 let localPriceDb;
+const propositionNoteContainer = document.querySelector('.proposition__note');
+const closePropositionNoteBtn = document.getElementById('closePropositionNote');
 
 // koniec zmienne
 
@@ -18,6 +20,8 @@ closeChooseGtComponent.addEventListener('click', () => chooseGtComponent.style.d
 closeSetPrice.addEventListener('click', () => setPriceComponent.style.display = 'none');
 
 openChooseGtComponent.addEventListener('click', () => chooseGtComponent.style.display = 'flex');
+
+closePropositionNoteBtn.addEventListener('click', () => propositionNoteContainer.style.display = 'none');
 
 // pobieranie bazy zapisanych cen
 if (!window.localStorage.getItem('ofertomatPrices')) {
@@ -248,8 +252,8 @@ calculateBtn.addEventListener('click', () => {
     if (!calculateFlag) return alert('W wybranym przez Ciebie okresie jest rok, dla którego nie masz podanej ceny!');
     switch (gt[2]) {
         case '1':
-            // if(wear.sphereFirst === 0) return alert('Zużycie 0?');
-            // if(proposition.sphereFirst === 0) return alert('Za darmo chcesz oddać ten prąd? Propozycja 0?');            
+            if(wear.sphereFirst === 0) return alert('Zużycie 0?');
+            if(proposition.sphereFirst === 0) return alert('Za darmo chcesz oddać ten prąd? Propozycja 0?');            
             calculateYearsTable.forEach(obj => {
                 if (obj.hasOwnProperty('2021')) {
                     marge2021 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2021])) * wear.sphereFirst) * obj[2021];
@@ -317,6 +321,7 @@ calculateBtn.addEventListener('click', () => {
             })
             break;
     }
-    margeMass = (marge2021 + marge2022 + marge2023 + marge2024 + marge2025 + marge2026).toFixed(2);    
-console.log(margeMass)
+    margeMass = (marge2021 + marge2022 + marge2023 + marge2024 + marge2025 + marge2026).toFixed(2);  
+    propositionNoteContainer.children[1].innerHTML = `Twoja masa marży to: <span>${margeMass}</span>`  
+    propositionNoteContainer.style.display = 'flex';
 });
