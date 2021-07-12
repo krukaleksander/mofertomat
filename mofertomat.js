@@ -251,11 +251,26 @@ calculateBtn.addEventListener('click', () => {
             // if(wear.sphereFirst === 0) return alert('Zużycie 0?');
             // if(proposition.sphereFirst === 0) return alert('Za darmo chcesz oddać ten prąd? Propozycja 0?');            
             calculateYearsTable.forEach(obj => {
-                if (obj.hasOwnProperty('2021')) {  
+                if (obj.hasOwnProperty('2021')) {
                     marge2021 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2021])) * wear.sphereFirst) * obj[2021];
                 }
+                if (obj.hasOwnProperty('2022')) {
+                    marge2022 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2022])) * wear.sphereFirst) * obj[2022];
+                }
+                if (obj.hasOwnProperty('2023')) {
+                    marge2023 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2023])) * wear.sphereFirst) * obj[2023];
+                }
+                if (obj.hasOwnProperty('2024')) {
+                    marge2024 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2024])) * wear.sphereFirst) * obj[2024];
+                }
+                if (obj.hasOwnProperty('2025')) {
+                    marge2025 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2025])) * wear.sphereFirst) * obj[2025];
+                }
+                if (obj.hasOwnProperty('2026')) {
+                    marge2026 = ((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2026])) * wear.sphereFirst) * obj[2026];
+                }
             })
-            console.log(marge2021)
+
             break;
         case '2':
 
@@ -263,5 +278,6 @@ calculateBtn.addEventListener('click', () => {
         default:
             break;
     }
+    margeMass = (marge2021 + marge2022 + marge2023 + marge2024 + marge2025 + marge2026).toFixed(2);    
 
 });
