@@ -297,22 +297,22 @@ calculateBtn.addEventListener('click', () => {
         default:
             calculateYearsTable.forEach(obj => {
                 if (obj.hasOwnProperty('2021')) {
-                    marge2021 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2021][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2021][1])) * wear.sphereSecond)) + ((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2021][2]) * wear.sphereThird)))) * obj[2021];
+                    marge2021 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2021][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2021][1])) * wear.sphereSecond)) + (((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2021][2])) * wear.sphereThird)))) * obj[2021];
                 }
-                if (obj.hasOwnProperty('2022')) {
-                    marge2022 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2022][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2022][1])) * wear.sphereSecond)) + ((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2022][2]) * wear.sphereThird)))) * obj[2022];
+                if (obj.hasOwnProperty('2022')) {  
+                    marge2022 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2022][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2022][1])) * wear.sphereSecond)) + (((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2022][2])) * wear.sphereThird)))) * obj[2022];
                 }
                 if (obj.hasOwnProperty('2023')) {
-                    marge2023 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2023][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2023][1])) * wear.sphereSecond)) + ((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2023][2]) * wear.sphereThird)))) * obj[2023];
+                    marge2023 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2023][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2023][1])) * wear.sphereSecond)) + (((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2023][2])) * wear.sphereThird)))) * obj[2023];
                 }
                 if (obj.hasOwnProperty('2024')) {
-                    marge2024 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2024][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2024][1])) * wear.sphereSecond)) + ((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2024][2]) * wear.sphereThird)))) * obj[2024];
+                    marge2024 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2024][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2024][1])) * wear.sphereSecond)) + (((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2024][2])) * wear.sphereThird)))) * obj[2024];
                 }
                 if (obj.hasOwnProperty('2025')) {
-                    marge2025 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2025][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2025][1])) * wear.sphereSecond)) + ((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2025][2]) * wear.sphereThird)))) * obj[2025];
+                    marge2025 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2025][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2025][1])) * wear.sphereSecond)) + (((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2025][2])) * wear.sphereThird)))) * obj[2025];
                 }
                 if (obj.hasOwnProperty('2026')) {
-                    marge2026 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2026][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2026][1])) * wear.sphereSecond)) + ((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2026][2]) * wear.sphereThird)))) * obj[2026];
+                    marge2026 = ((((((proposition.sphereFirst - replaceAndParseMainFn(pricesFromDb[2026][0])) * wear.sphereFirst)) + ((proposition.sphereSecond - replaceAndParseMainFn(pricesFromDb[2026][1])) * wear.sphereSecond)) + (((proposition.sphereThird - replaceAndParseMainFn(pricesFromDb[2026][2])) * wear.sphereThird)))) * obj[2026];
                 }
             })
             break;
