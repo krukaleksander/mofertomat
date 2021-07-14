@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 
+$breakepoints: (xsmall: 'max-width: 640px',
+    small: 'min-width: 640px',
+    medium: 'min-width: 800px',
+    large: 'min-width: 1024px',
+    xlarge: 'min-width: 1200px',
+    xxlarge: 'min-width: 1440px'
+);
+
+@mixin mq($breakepoint) {
+    $size: map-get($breakepoints, $breakepoint);
+
+    @if $size {
+        @media (#{$size}) {
+            @content;
+        }
+    }
+
+    @else {
+        @error '"#{$breakepoint}" - nie rozpoznaje'
+    }
+}
+
 $mofertomatColor: #ddd;
 $mofertomatBackground: #1e1a1a;
 
@@ -15,9 +37,15 @@ $mofertomatBackground: #1e1a1a;
     color: $mofertomatColor;
     background-color: $mofertomatBackground;
 
+    @include mq(large) {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
     header {
         padding: 5px;
         margin-bottom: 5px;
+
 
         h1 {
             font-size: 25px;
@@ -31,11 +59,14 @@ $mofertomatBackground: #1e1a1a;
             padding: 5px;
             border: 1px solid aqua;
             border-radius: 5px;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
     }
 
     .prices {
+
         padding: 5px;
 
         button {
@@ -61,6 +92,7 @@ $mofertomatBackground: #1e1a1a;
             padding: 10px;
             display: none;
             flex-direction: column;
+            z-index: 2;
 
             .close-window {
                 align-self: flex-end;
@@ -104,6 +136,7 @@ $mofertomatBackground: #1e1a1a;
             padding: 10px;
             text-align: center;
             min-height: 100vh;
+            z-index: 3;
 
             h2 {
                 color: yellowgreen;
@@ -227,6 +260,20 @@ $mofertomatBackground: #1e1a1a;
 
 .proposition {
     padding: 5px;
+
+    @include mq(large) {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__wear,
+    &__has-prices,
+    &__given {
+        @include mq(large) {
+            flex-basis: 33%;
+        }
+    }
 
     div {
         margin-bottom: 10px;
@@ -439,74 +486,73 @@ $mofertomatBackground: #1e1a1a;
     grid-template-rows: 50vh;
     align-items: center;
     justify-items: center;
-  
+
     .checkbox-con {
-      margin: 10px;
-      display: flex;
-      align-items: center;
-  
-      input[type="checkbox"] {
-        appearance: none;
-        width: 48px;
-        height: 27px;
-        border: 2px solid #ff0000;
-        border-radius: 20px;
-        background: #f1e1e1;
-        position: relative;
-        // transition: all 0.3s ease-in-out;
-        box-sizing: border-box;
-        font-size: 15px;
-  
-        &::before {
-          content: "";
-          width: 14px;
-          height: 14px;
-          background: rgba(234, 7, 7, 50%);
-          border: 2px solid #ea0707;
-          border-radius: 50%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          transform: translate(13%, 15%);
-          transition: all 0.3s ease-in-out;
-        }
-  
-        &::after {
-          content: url(https://svgshare.com/i/YrQ.svg);
-          position: absolute;
-          top: 0;
-          left: 20px;
-          // transform: translate(90%, 0%);
-          // transition: all 0.3s ease-in-out;
-        }
-  
-        &:checked {
-          border: 2px solid #02c202;
-          background: #e2f1e1;
-          // transition: all 0.3s ease-in-out;
-  
-          &::before {
-            background: rgba(2, 194, 2, 50%);
-            border: 2px solid #02c202;
-            transform: translate(133%, 13%);
-            transition: all 0.3s ease-in-out;
-          }
-  
-          &::after {
-            content: url(https://svgshare.com/i/Yr4.svg);
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            // transform: translate(40%, 30%);
+        margin: 10px;
+        display: flex;
+        align-items: center;
+
+        input[type="checkbox"] {
+            appearance: none;
+            width: 48px;
+            height: 27px;
+            border: 2px solid #ff0000;
+            border-radius: 20px;
+            background: #f1e1e1;
+            position: relative;
             // transition: all 0.3s ease-in-out;
-          }
+            box-sizing: border-box;
+            font-size: 15px;
+
+            &::before {
+                content: "";
+                width: 14px;
+                height: 14px;
+                background: rgba(234, 7, 7, 50%);
+                border: 2px solid #ea0707;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(13%, 15%);
+                transition: all 0.3s ease-in-out;
+            }
+
+            &::after {
+                content: url(https://svgshare.com/i/YrQ.svg);
+                position: absolute;
+                top: 0;
+                left: 20px;
+                // transform: translate(90%, 0%);
+                // transition: all 0.3s ease-in-out;
+            }
+
+            &:checked {
+                border: 2px solid #02c202;
+                background: #e2f1e1;
+                // transition: all 0.3s ease-in-out;
+
+                &::before {
+                    background: rgba(2, 194, 2, 50%);
+                    border: 2px solid #02c202;
+                    transform: translate(133%, 13%);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &::after {
+                    content: url(https://svgshare.com/i/Yr4.svg);
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    // transform: translate(40%, 30%);
+                    // transition: all 0.3s ease-in-out;
+                }
+            }
         }
-      }
-  
-      label {
-        margin-left: 10px;
-        color: #4caf50;
-      }
+
+        label {
+            margin-left: 10px;
+            color: #4caf50;
+        }
     }
-  }
-  
+}

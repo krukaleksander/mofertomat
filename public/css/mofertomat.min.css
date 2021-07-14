@@ -13,6 +13,13 @@
   background-color: #1e1a1a;
 }
 
+@media (min-width: 1024px) {
+  .mofertomat-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
 .mofertomat-wrapper header {
   padding: 5px;
   margin-bottom: 5px;
@@ -30,6 +37,8 @@
   padding: 5px;
   border: 1px solid aqua;
   border-radius: 5px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .mofertomat-wrapper .prices {
@@ -62,6 +71,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 2;
 }
 
 .mofertomat-wrapper .prices__choose-gt .close-window {
@@ -110,6 +120,7 @@
   padding: 10px;
   text-align: center;
   min-height: 100vh;
+  z-index: 3;
 }
 
 .mofertomat-wrapper .prices__insert h2 {
@@ -247,6 +258,24 @@
 
 .proposition {
   padding: 5px;
+}
+
+@media (min-width: 1024px) {
+  .proposition {
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1024px) {
+  .proposition__wear, .proposition__has-prices, .proposition__given {
+    -ms-flex-preferred-size: 33%;
+        flex-basis: 33%;
+  }
 }
 
 .proposition div {
