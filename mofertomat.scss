@@ -267,7 +267,8 @@ $mofertomatBackground: #1e1a1a;
         justify-content: center;
     }
 
-    .calculate-btn-wrapper {
+    .calculate-btn-wrapper,
+    .clean-btn-wrapper {
         display: flex;
         justify-content: center;
     }
@@ -391,6 +392,12 @@ $mofertomatBackground: #1e1a1a;
 
 }
 
+.clean-btn-wrapper {
+    button {
+        filter: hue-rotate(200deg);
+    }
+}
+
 .proposition__note {
     display: none;
     position: fixed;
@@ -399,17 +406,20 @@ $mofertomatBackground: #1e1a1a;
     width: 100vw;
     height: 100vh;
     background-color: rgb(26, 22, 22);
-    padding: 20px;    
+    padding: 20px;
     flex-direction: column;
     justify-content: center;
+
     .close-window {
         position: absolute;
         top: 20px;
         left: 10px;
     }
+
     p {
         font-size: 25px;
         text-align: center;
+
         span {
             color: yellowgreen;
             font-weight: bolder;
@@ -418,3 +428,85 @@ $mofertomatBackground: #1e1a1a;
     }
 
 }
+
+.container-check {
+    // height: 100vh;
+    // width: 600px;
+    // margin: auto;
+    // margin-top: 10rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50vh;
+    align-items: center;
+    justify-items: center;
+  
+    .checkbox-con {
+      margin: 10px;
+      display: flex;
+      align-items: center;
+  
+      input[type="checkbox"] {
+        appearance: none;
+        width: 48px;
+        height: 27px;
+        border: 2px solid #ff0000;
+        border-radius: 20px;
+        background: #f1e1e1;
+        position: relative;
+        // transition: all 0.3s ease-in-out;
+        box-sizing: border-box;
+        font-size: 15px;
+  
+        &::before {
+          content: "";
+          width: 14px;
+          height: 14px;
+          background: rgba(234, 7, 7, 50%);
+          border: 2px solid #ea0707;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(13%, 15%);
+          transition: all 0.3s ease-in-out;
+        }
+  
+        &::after {
+          content: url(https://svgshare.com/i/YrQ.svg);
+          position: absolute;
+          top: 0;
+          left: 20px;
+          // transform: translate(90%, 0%);
+          // transition: all 0.3s ease-in-out;
+        }
+  
+        &:checked {
+          border: 2px solid #02c202;
+          background: #e2f1e1;
+          // transition: all 0.3s ease-in-out;
+  
+          &::before {
+            background: rgba(2, 194, 2, 50%);
+            border: 2px solid #02c202;
+            transform: translate(133%, 13%);
+            transition: all 0.3s ease-in-out;
+          }
+  
+          &::after {
+            content: url(https://svgshare.com/i/Yr4.svg);
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            // transform: translate(40%, 30%);
+            // transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+  
+      label {
+        margin-left: 10px;
+        color: #4caf50;
+      }
+    }
+  }
+  

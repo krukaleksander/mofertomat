@@ -11,6 +11,7 @@ const changePirecesBtn = document.getElementById('changeBasePrice');
 let localPriceDb;
 const propositionNoteContainer = document.querySelector('.proposition__note');
 const closePropositionNoteBtn = document.getElementById('closePropositionNote');
+const cleanBtn = document.getElementById('cleanBtn');
 
 // koniec zmienne
 
@@ -234,12 +235,18 @@ function checkIfSomePriceIsZero(yearsArr, pricesObj) {
 
 function calculateSavings(flag = true) {
 
-    if(flag) {
+    if (flag) {
         const actualValues = getActualValues();
-        const {gt, wear, actualPrices, proposition, oh} = actualValues;
-        
+        const {
+            gt,
+            wear,
+            actualPrices,
+            proposition,
+            oh
+        } = actualValues;
+
         let savings = 0;
-    
+
         switch (gt[2]) {
             case '1':
                 savings = ((actualPrices.sphereFirst - proposition.sphereFirst) * wear.sphereFirst) + ((oh.has - oh.weGive) * 12);
@@ -250,13 +257,13 @@ function calculateSavings(flag = true) {
             default:
                 savings = (((actualPrices.sphereFirst - proposition.sphereFirst) * wear.sphereFirst) + ((actualPrices.sphereSecond - proposition.sphereSecond) * wear.sphereSecond) + ((actualPrices.sphereThird - proposition.sphereThird) * wear.sphereThird)) + ((oh.has - oh.weGive) * 12);
                 break;
-        
+
         }
         return savings.toFixed(2);
     } else {
         return 'nie liczono'
     }
-    
+
 }
 
 calculateBtn.addEventListener('click', () => {
@@ -354,7 +361,15 @@ calculateBtn.addEventListener('click', () => {
     margeMass = (marge2021 + marge2022 + marge2023 + marge2024 + marge2025 + marge2026).toFixed(2);
     propositionNoteContainer.children[1].innerHTML = `Twoja masa marży to: <span>${margeMass}</span>`
     propositionNoteContainer.children[2].style.marginTop = '10px';
-    propositionNoteContainer.children[2].innerHTML = `Roczne oszczędności: <span style='color:#009688;'>${calculateSavings()}</span>`
+    propositionNoteContainer.children[2].innerHTML = `Roczne oszczędności: <span style='color:#009688;'>${calculateSavings(document.getElementById('calculateSavingsFlag').checked)}</span>`
     propositionNoteContainer.style.display = 'flex';
 
 });
+
+function cleanInputsFn() {
+    const inputs = [...document.querySelectorAll('.clean-input')];
+    inputs.forEach(input => input.value = '0')
+    document.getElementById('calculateSavingsFlag').checked = false
+}
+
+cleanBtn.addEventListener('click', () => cleanInputsFn())

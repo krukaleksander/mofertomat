@@ -292,7 +292,8 @@
           justify-content: center;
 }
 
-.proposition .calculate-btn-wrapper {
+.proposition .calculate-btn-wrapper,
+.proposition .clean-btn-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,6 +464,11 @@
   }
 }
 
+.clean-btn-wrapper button {
+  -webkit-filter: hue-rotate(200deg);
+          filter: hue-rotate(200deg);
+}
+
 .proposition__note {
   display: none;
   position: fixed;
@@ -496,5 +502,92 @@
   color: yellowgreen;
   font-weight: bolder;
   letter-spacing: 2px;
+}
+
+.container-check {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 50vh;
+      grid-template-rows: 50vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.container-check .checkbox-con {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-check .checkbox-con input[type="checkbox"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 48px;
+  height: 27px;
+  border: 2px solid #ff0000;
+  border-radius: 20px;
+  background: #f1e1e1;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+}
+
+.container-check .checkbox-con input[type="checkbox"]::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #ea0707;
+  border: 2px solid #ea0707;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(13%, 15%);
+          transform: translate(13%, 15%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.container-check .checkbox-con input[type="checkbox"]::after {
+  content: url(https://svgshare.com/i/YrQ.svg);
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.container-check .checkbox-con input[type="checkbox"]:checked {
+  border: 2px solid #02c202;
+  background: #e2f1e1;
+}
+
+.container-check .checkbox-con input[type="checkbox"]:checked::before {
+  background: #02c202;
+  border: 2px solid #02c202;
+  -webkit-transform: translate(133%, 13%);
+          transform: translate(133%, 13%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.container-check .checkbox-con input[type="checkbox"]:checked::after {
+  content: url(https://svgshare.com/i/Yr4.svg);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.container-check .checkbox-con label {
+  margin-left: 10px;
+  color: #4caf50;
 }
 /*# sourceMappingURL=mofertomat.min.css.map */

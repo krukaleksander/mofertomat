@@ -113,24 +113,30 @@
 <section class="proposition">
     <div class='proposition__wear'>
         <span class="proposition__span">Zużycie klienta w MWh / rok</span>
-         <div><label for="">I strefa</label><input type="text" id="wearFirst" value='0'></div>
-         <div><label for="">II strefa</label><input type="text" id="wearSecond" value='0'></div>
-         <div><label for="">III strefa</label><input type="text" id="wearThird" value='0'></div>
+         <div><label for="">I strefa</label><input type="text" id="wearFirst" value='0' class='clean-input'></div>
+         <div><label for="">II strefa</label><input type="text" id="wearSecond" value='0' class='clean-input'></div>
+         <div><label for="">III strefa</label><input type="text" id="wearThird" value='0' class='clean-input'></div>
     </div>
     <div class="proposition__has-prices">
         <span class="proposition__span">Obecne stawki klienta</span>
         <span class="proposition__span proposition__span--sub-text">Wypełnij tylko jeśli chcesz wyliczyć oszczędności</span>
-        <div><label for="">I strefa</label><input type="text" value='0' id='hasPriceFirst'></div>
-        <div><label for="">II strefa</label><input type="text" value='0' id='hasPriceSecond'></div>
-        <div><label for="">III strefa</label><input type="text" value='0' id='hasPriceThird'></div>
-        <div><label for="">Opłata H.  </label><input type="text" value='0' id='hasOh'></div>
+        <div class="container-check">
+            <div class="checkbox-con off">
+                <input type="checkbox" id="calculateSavingsFlag"/>
+                <label>Policz oszczędności</label>
+              </div>
+        </div>        
+        <div><label for="">I strefa</label><input type="text" value='0' id='hasPriceFirst' class='clean-input'></div>
+        <div><label for="">II strefa</label><input type="text" value='0' id='hasPriceSecond' class='clean-input'></div>
+        <div><label for="">III strefa</label><input type="text" value='0' id='hasPriceThird' class='clean-input'></div>
+        <div><label for="">Opłata H.  </label><input type="text" value='0' id='hasOh' class='clean-input'></div>
     </div>
     <div class="proposition__given">
         <span class="proposition__span">Stawki, które proponujesz</span>
-        <div><label for="">I strefa</label><input type="text" value='0' id='propositionFirst'></div>
-        <div><label for="">II strefa</label><input type="text" value='0' id='propositionSecond'></div>
-        <div><label for="">III strefa</label><input type="text" value='0' id='propositionThird'></div>
-        <div><label for="">Opłata H.</label><input type="text" value='0' id='propositionOh'></div>
+        <div><label for="">I strefa</label><input type="text" value='0' id='propositionFirst' class='clean-input'></div>
+        <div><label for="">II strefa</label><input type="text" value='0' id='propositionSecond' class='clean-input'></div>
+        <div><label for="">III strefa</label><input type="text" value='0' id='propositionThird' class='clean-input'></div>
+        <div><label for="">Opłata H.</label><input type="text" value='0' id='propositionOh' class='clean-input'></div>
     </div>
     <div class='calculate-btn-wrapper'>
         <button id='calculateBtn'>
@@ -139,6 +145,15 @@
             <span></span>
             <span></span>
             Oblicz
+        </button>
+    </div>
+    <div class='clean-btn-wrapper'>
+        <button id='cleanBtn'>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Wyczyść
         </button>
     </div>
     
