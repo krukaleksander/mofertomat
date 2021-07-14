@@ -74,6 +74,18 @@
   z-index: 2;
 }
 
+@media (min-width: 1024px) {
+  .mofertomat-wrapper .prices__choose-gt {
+    max-width: 600px;
+    max-height: 500px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border: 2px solid yellowgreen;
+  }
+}
+
 .mofertomat-wrapper .prices__choose-gt .close-window {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -121,6 +133,19 @@
   text-align: center;
   min-height: 100vh;
   z-index: 3;
+}
+
+@media (min-width: 1024px) {
+  .mofertomat-wrapper .prices__insert {
+    max-width: 600px;
+    min-height: unset;
+    max-height: 500px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border: 2px solid yellowgreen;
+  }
 }
 
 .mofertomat-wrapper .prices__insert h2 {
@@ -268,6 +293,11 @@
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 }
 
