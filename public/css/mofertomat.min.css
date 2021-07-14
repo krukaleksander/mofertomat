@@ -546,6 +546,19 @@
           justify-content: center;
 }
 
+@media (min-width: 1024px) {
+  .proposition__note {
+    max-width: 600px;
+    min-height: unset;
+    max-height: 500px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border: 2px solid yellowgreen;
+  }
+}
+
 .proposition__note .close-window {
   position: absolute;
   top: 20px;
