@@ -264,13 +264,14 @@
   color: yellowgreen;
   font-size: 20px;
   font-weight: bolder;
-  width: 100px;
+  width: 130px;
   text-align: center;
 }
 
 .date div select option {
   background-color: #1e1a1a;
   color: yellowgreen;
+  text-align: center;
 }
 
 .date div:nth-child(3) {
@@ -279,6 +280,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#newDateWrap {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .proposition {

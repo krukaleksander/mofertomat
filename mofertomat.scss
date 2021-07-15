@@ -260,12 +260,13 @@ $mofertomatBackground: #1e1a1a;
             color: yellowgreen;
             font-size: 20px;
             font-weight: bolder;
-            width: 100px;
+            width: 130px;
             text-align: center;
 
             option {
                 background-color: $mofertomatBackground;
                 color: yellowgreen;
+                text-align: center;
             }
         }
     }
@@ -274,8 +275,12 @@ $mofertomatBackground: #1e1a1a;
         margin-top: 10px;
         flex-direction: column;
     }
+    
 }
 
+#newDateWrap {
+    flex-direction: row;
+}
 .proposition {
     padding: 5px;
 

@@ -56,6 +56,12 @@ function getLocalDb() {
     localPriceDb = JSON.parse(window.localStorage.getItem('ofertomatPrices'));
 }
 
+function selectValue(id, value) {
+    document.getElementById(id).value = value;
+}
+
+selectValue('dateNewMonth', '12')
+
 function changePrices() {
     const gt = setPriceComponent.children[1].innerText;
     const year = document.getElementById('chooseYear').value;
@@ -177,7 +183,10 @@ function getActualValues() {
             month: document.getElementById('dateToMonth').value,
             year: document.getElementById('dateToYear').value
         },
-        endOfNewAgreement: document.getElementById('dateNewYear').value,
+        endOfNewAgreement: {
+            year: document.getElementById('dateNewYear').value,
+            month: document.getElementById('dateNewMonth').value
+        },
         wear: {
             sphereFirst: replaceAndParseMainFn(document.getElementById('wearFirst').value),
             sphereSecond: replaceAndParseMainFn(document.getElementById('wearSecond').value),
@@ -200,13 +209,19 @@ function getActualValues() {
     }
 }
 
-function whichYearsCalculate(startMonth, startYear, endYear) {
+function whichYearsCalculate(startMonth, startYear, endYear, endMonth) {
     const differenceInYears = replaceAndParseMainFn(endYear) - replaceAndParseMainFn(startYear);
     const resultTable = [];
     for (let index = 0; index < differenceInYears + 1; index++) {
+
         if (index === 0) {
             resultTable.push({
                 [startYear]: replaceAndParseMainFn(startMonth) / 12
+            })
+        } else if (index === differenceInYears) {
+            const lastYear = endYear;
+            resultTable.push({
+                [lastYear]: replaceAndParseMainFn(endMonth) / 12
             })
         } else {
             const nextYear = replaceAndParseMainFn(startYear) + index;
@@ -216,7 +231,7 @@ function whichYearsCalculate(startMonth, startYear, endYear) {
         }
 
     }
-
+   
     return resultTable
 }
 
@@ -282,7 +297,7 @@ calculateBtn.addEventListener('click', () => {
     let marge2025 = 0;
     let marge2026 = 0;
     let margeMass = 0;
-    const calculateYearsTable = whichYearsCalculate(endOfActualAgreement.month, endOfActualAgreement.year, endOfNewAgreement);
+    const calculateYearsTable = whichYearsCalculate(endOfActualAgreement.month, endOfActualAgreement.year, endOfNewAgreement.year, endOfNewAgreement.month);
     const pricesFromDb = localPriceDb.find(priceObject => priceObject.name === gt.toLowerCase());
     const calculateFlag = checkIfSomePriceIsZero(calculateYearsTable, pricesFromDb);
     if (pricesFromDb === undefined) return alert('Nie masz wprowadzonych cen dla tej GT');
